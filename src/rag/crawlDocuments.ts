@@ -3,8 +3,8 @@ import fetch from "node-fetch";
 import urlModule from "url";
 import cliProgress from "cli-progress";
 
-const LANGCHAIN_DOCS_HOME = "https://js.langchain.com/v0.2/docs/introduction/";
-const LANGCHAIN_DOCS_PREFIX = "/v0.2/docs";
+const LANGCHAIN_DOCS_HOME = "https://js.langchain.com/docs/introduction";
+const LANGCHAIN_DOCS_PREFIX = "/docs/how_to/";
 
 const progressBar = new cliProgress.SingleBar({
   format: "Documents Crawled: {value}",
