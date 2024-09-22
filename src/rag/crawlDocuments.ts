@@ -4,13 +4,16 @@ import urlModule from "url";
 import cliProgress from "cli-progress";
 
 // Note: Full Langchain document take a very long time to download. A short document is provided for the course.
+
 const LANGCHAIN_DOCS_HOME =
-  "https://github.com/learn-with-amit/genai-js/blob/main/docs/langchain.md";
+  "https://learn-with-amit.github.io/genai-js/langchain/";
+
+const LANGCHAIN_DOCS_PREFIX = "";
 
 // const LANGCHAIN_DOCS_HOME =
 //   "https://js.langchain.com/docs/introduction";
 
-const LANGCHAIN_DOCS_PREFIX = "/docs/";
+// const LANGCHAIN_DOCS_PREFIX = "/docs/";
 
 const progressBar = new cliProgress.SingleBar({
   format: "Documents Crawled: {value}",
