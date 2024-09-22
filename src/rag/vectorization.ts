@@ -18,7 +18,7 @@ const embeddingLLM = new OpenAIEmbeddings({
 
 const pinecone = new Pinecone();
 
-const pineconeIndex = pinecone.index("langchain-docs-2");
+const pineconeIndex = pinecone.index("langchain-docs");
 
 console.log("Starting Vecrotization...");
 const progressBar = new cliProgress.SingleBar({});

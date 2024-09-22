@@ -3,8 +3,14 @@ import fetch from "node-fetch";
 import urlModule from "url";
 import cliProgress from "cli-progress";
 
-const LANGCHAIN_DOCS_HOME = "https://js.langchain.com/docs/introduction";
-const LANGCHAIN_DOCS_PREFIX = "/docs/how_to/";
+// Note: Full Langchain document take a very long time to download. A short document is provided for the course.
+const LANGCHAIN_DOCS_HOME =
+  "https://github.com/learn-with-amit/genai-js/blob/main/docs/langchain.md";
+
+// const LANGCHAIN_DOCS_HOME =
+//   "https://js.langchain.com/docs/introduction";
+
+const LANGCHAIN_DOCS_PREFIX = "/docs/";
 
 const progressBar = new cliProgress.SingleBar({
   format: "Documents Crawled: {value}",
@@ -25,7 +31,7 @@ export async function crawlLangchainDocsUrls(): Promise<string[]> {
 async function fetchLinkedUrls(url: string, downloadedUrls: Set<string>) {
   if (downloadedUrls.has(url)) return;
 
-  progressBar.update(downloadedUrls.size);
+  progressBar.update(downloadedUrls.size + 1);
   try {
     const response = await fetch(url);
 
