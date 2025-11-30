@@ -22,19 +22,19 @@ Answer:`,
 ]);
 
 // OpenAI chat LLM
-const llm = new ChatOpenAI({
-  model: "gpt-3.5-turbo",
-  maxTokens: 500,
-});
+// const llm = new ChatOpenAI({
+//   model: "gpt-3.5-turbo",
+//   maxTokens: 500,
+// });
 
 // Google chat LLM
-// const llm = new ChatGoogleGenerativeAI({
-//   model: "gemini-2.5-flash",   // if this model is not available anymore then please check another available model from google gemini api documentation
+const llm = new ChatGoogleGenerativeAI({
+  model: "gemini-2.5-flash",   // if this model is not available anymore then please check another available model from google gemini api documentation
   
-//   // Important Note: There is a problem with maxOutputTokens parameters in google langchain package, it causes error
-//   // Don't use it for now, I will update the code in future if langchain team fixes this issue
-//   // maxOutputTokens: 500,
-// });
+  // Important Note: There is a problem with maxOutputTokens parameters in google langchain package, it causes error
+  // Don't use it for now, I will update the code in future if langchain team fixes this issue
+  // maxOutputTokens: 500,
+});
 
 const outputParser = new StringOutputParser();
 

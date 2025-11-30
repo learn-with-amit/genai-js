@@ -32,24 +32,24 @@ async function personalisedPitch(
   console.log("Formatted Prompt: ", formattedPrompt);
 
   // OpenAI LLM
-  const llm = new ChatOpenAI({
-    // temperature: 1,
-    // topP: 1,
-    maxTokens: 150,
-    model: "gpt-3.5-turbo",
-  });
+//   const llm = new ChatOpenAI({
+//     // temperature: 1,
+//     // topP: 1,
+//     maxTokens: 150,
+//     model: "gpt-3.5-turbo",
+//   });
 
   // Google Gemini LLM
-  // const llm = new ChatGoogleGenerativeAI({
-  //   model: "gemini-2.5-flash",   // if this model is not available anymore then please check another available model from google gemini api documentation
+  const llm = new ChatGoogleGenerativeAI({
+    model: "gemini-2.5-flash",   // if this model is not available anymore then please check another available model from google gemini api documentation
     
-  //   // Important Note: There is a problem with maxOutputTokens parameters in google langchain package, it causes error
-  //   // Don't use it for now, I will update the code in future if langchain team fixes this issue
-  //   // maxOutputTokens: 150, 
+    // Important Note: There is a problem with maxOutputTokens parameters in google langchain package, it causes error
+    // Don't use it for now, I will update the code in future if langchain team fixes this issue
+    // maxOutputTokens: 150, 
     
-  //   // temperature: 1,
-  //   // topP: 1,
-  // });
+    // temperature: 1,
+    // topP: 1,
+  });
 
   // Anthropic Claude LLM
   // const llm = new claude.ChatAnthropic({

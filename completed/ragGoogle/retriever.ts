@@ -8,23 +8,23 @@ import {GoogleGenerativeAIEmbeddings} from "@langchain/google-genai";
 dotenv.config();
 
 export async function createRetriever(): Promise<VectorStoreRetriever> {
-  
+
   // OpenAI Embedding LLM
   // Important note: The embedding model for retrieval must be same as the embedding model used for vectorization
-  const embeddingLLM = new OpenAIEmbeddings({
-    model: "text-embedding-3-small",
-  });
+  // const embeddingLLM = new OpenAIEmbeddings({
+  //   model: "text-embedding-3-small",
+  // });
 
   // Google Gemini Embedding LLM
   // Important note: The embedding model for retrieval must be same as the embedding model used for vectorization
-  // const embeddingLLM = new GoogleGenerativeAIEmbeddings({
-  //   model: "gemini-embedding-001",
-  // });
+  const embeddingLLM = new GoogleGenerativeAIEmbeddings({
+    model: "gemini-embedding-001",
+  });
 
   const pinecone = new Pinecone();
 
   // Important Note: Make sure that the name of the index is same as used during the vectorization process
-  const pineconeIndex = pinecone.index("langchain-docs");
+  const pineconeIndex = pinecone.index("langchain-docs-google");
 
   const vectorStore = await PineconeStore.fromExistingIndex(embeddingLLM, {
     pineconeIndex,
